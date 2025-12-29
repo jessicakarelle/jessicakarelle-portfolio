@@ -1,0 +1,34 @@
+/* Tablette */
+@media (max-width: 768px) {
+    .project-card {
+        position: relative;
+        top: 0;
+    }
+}
+
+/* Desktop */
+@media (max-width: 1024px) {
+    .navbar {
+        width: 90%;
+    }
+
+    .navbar-hamburger {
+        display: block;
+    }
+
+    .navbar-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 5%;
+        right: 5%;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .navbar-list--active {
+        display: flex;
+    }
+}

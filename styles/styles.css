@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+html,
+body {
+    height: 100%;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+body {
+    font-family: "Playfair Display", serif;
+}
+section {
+    margin-top: 4rem;
+}
+section:not(.projects-section) h2 {
+    margin-bottom: 2rem;
+}
+.box {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.featured-img {
+    filter: grayscale(100%) !important;
+    transition: all 0.3 ease;
+}
+.featured-img:hover {
+    filter: grayscale(0) !important;
+    transform: translateY(-6px);
+}
+.projects-container {
+    position: relative;
+    padding: 1rem 0;
+}
+.project-card {
+    position: sticky;
+    top: 20px;
+    min-height: 50vh;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:black;
+    background-color: white;
+}
+.project-1 {
+    top: 20px;
+    min-height: 30vh !important;
+}
+.project-2 {
+    top: 40px;
+}
+.project-3 {
+    top: 60px;
+}
+.project-4 {
+    top: 80px;
+}
