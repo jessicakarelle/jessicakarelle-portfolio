@@ -1,402 +1,385 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Section Compétences Interactive</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .skill-card {
-            transition: transform 0.3s;
-            border: 2px solid #e0e0e0;
-        }
-        .skill-card:hover {
-            transform: translateY(-5px);
-            border-color: #000;
-        }
-        .nav-pills .nav-link {
-            color: #333;
-            border: 2px solid transparent;
-        }
-        .nav-pills .nav-link.active {
-            background-color: #000;
-            border-color: #000;
-        }
-        .skill-tag {
-            background: #f0f0f0;
-            transition: all 0.3s;
-        }
-        .skill-tag:hover {
-            background: #000;
-            color: white;
-        }
-    </style>
-</head>
-<body class="bg-light">
-    <section id="skills-section" class="container my-5 py-5">
-        <h2 class="text-center mb-5 fw-bold">Mes Compétences</h2>
-        
-        <div class="row">
-            <!-- Navigation -->
-            <div class="col-lg-3 mb-4">
-                <div class="nav flex-column nav-pills sticky-top" style="top: 100px;">
-                    <button class="nav-link active mb-2" data-bs-toggle="pill" data-bs-target="#frontend">
-                        <i class="fas fa-code me-2"></i> Frontend
-                    </button>
-                    <button class="nav-link mb-2" data-bs-toggle="pill" data-bs-target="#backend">
-                        <i class="fas fa-server me-2"></i> Backend
-                    </button>
-                    <button class="nav-link mb-2" data-bs-toggle="pill" data-bs-target="#design">
-                        <i class="fas fa-palette me-2"></i> Design
-                    </button>
-                    <button class="nav-link mb-2" data-bs-toggle="pill" data-bs-target="#tools">
-                        <i class="fas fa-tools me-2"></i> Outils
-                    </button>
-                    <button class="nav-link mb-2" data-bs-toggle="pill" data-bs-target="#soft">
-                        <i class="fas fa-lightbulb me-2"></i> Soft Skills
-                    </button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Section Compétences Interactive</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <style>
+            .skill-card {
+                transition: transform 0.3s;
+                border: 2px solid #e0e0e0;
+            }
+            .skill-card:hover {
+                transform: translateY(-5px);
+                border-color: #000;
+            }
+            .nav-pills .nav-link {
+                color: #333;
+                border: 2px solid transparent;
+            }
+            .nav-pills .nav-link.active {
+                background-color: #000;
+                border-color: #000;
+            }
+            .skill-tag {
+                background: #f0f0f0;
+                transition: all 0.3s;
+            }
+            .skill-tag:hover {
+                background: #000;
+                color: white;
+            }
+        </style>
+    </head>
+    <body class="bg-light">
+        <section id="skills-section" class="container my-5 py-5">
+            <h2 class="text-center mb-5 fw-bold">Mes Compétences</h2>
+
+            <div class="row">
+                <!-- Navigation -->
+                <div class="col-lg-3 mb-4">
+                    <div class="nav flex-column nav-pills sticky-top" style="top: 100px">
+                        <button class="nav-link active mb-2" data-bs-toggle="pill" data-bs-target="#frontend">
+                            <i class="fas fa-code me-2"></i> Frontend
+                        </button>
+                        <button class="nav-link mb-2" data-bs-toggle="pill" data-bs-target="#backend">
+                            <i class="fas fa-server me-2"></i> Backend
+                        </button>
+                        <button class="nav-link mb-2" data-bs-toggle="pill" data-bs-target="#design">
+                            <i class="fas fa-palette me-2"></i> Design
+                        </button>
+                        <button class="nav-link mb-2" data-bs-toggle="pill" data-bs-target="#tools">
+                            <i class="fas fa-tools me-2"></i> Outils
+                        </button>
+                        <button class="nav-link mb-2" data-bs-toggle="pill" data-bs-target="#soft">
+                            <i class="fas fa-lightbulb me-2"></i> Soft Skills
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Contenu -->
-            <div class="col-lg-9">
-                <div class="tab-content">
-                    <!-- Frontend -->
-                    <div class="tab-pane fade show active" id="frontend">
-                        <h3 class="mb-4 border-bottom border-3 border-dark pb-3">
-                            <i class="fas fa-code me-2"></i> Développement Frontend
-                        </h3>
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">HTML5 / CSS3</h5>
-                                        <div class="mb-3">
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <small>Expert</small>
-                                                <small>95%</small>
+                <!-- Contenu -->
+                <div class="col-lg-9">
+                    <div class="tab-content">
+                        <!-- Frontend -->
+                        <div class="tab-pane fade show active" id="frontend">
+                            <h3 class="mb-4 border-bottom border-3 border-dark pb-3">
+                                <i class="fas fa-code me-2"></i> Développement Frontend
+                            </h3>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">HTML5 / CSS3</h5>
+                                            <div class="mb-3">
+                                                <div class="d-flex justify-content-between mb-1">
+                                                    <small>Expert</small>
+                                                    <small>95%</small>
+                                                </div>
+                                                <div class="progress" style="height: 8px">
+                                                    <div class="progress-bar bg-dark" style="width: 95%"></div>
+                                                </div>
                                             </div>
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-dark" style="width: 95%"></div>
+                                            <p class="card-text small text-muted">
+                                                Maîtrise avancée du HTML sémantique et CSS moderne
+                                            </p>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge skill-tag rounded-pill">Responsive</span>
+                                                <span class="badge skill-tag rounded-pill">Animations</span>
+                                                <span class="badge skill-tag rounded-pill">SEO</span>
                                             </div>
-                                        </div>
-                                        <p class="card-text small text-muted">
-                                            Maîtrise avancée du HTML sémantique et CSS moderne
-                                        </p>
-                                        <div class="d-flex flex-wrap gap-2">
-                                            <span class="badge skill-tag rounded-pill">Responsive</span>
-                                            <span class="badge skill-tag rounded-pill">Animations</span>
-                                            <span class="badge skill-tag rounded-pill">SEO</span>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">JavaScript ES6+</h5>
-                                        <div class="mb-3">
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <small>Avancé</small>
-                                                <small>85%</small>
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">JavaScript ES6+</h5>
+                                            <div class="mb-3">
+                                                <div class="d-flex justify-content-between mb-1">
+                                                    <small>Avancé</small>
+                                                    <small>85%</small>
+                                                </div>
+                                                <div class="progress" style="height: 8px">
+                                                    <div class="progress-bar bg-dark" style="width: 85%"></div>
+                                                </div>
                                             </div>
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-dark" style="width: 85%"></div>
+                                            <p class="card-text small text-muted">
+                                                Applications interactives avec JavaScript moderne
+                                            </p>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge skill-tag rounded-pill">Async/Await</span>
+                                                <span class="badge skill-tag rounded-pill">DOM</span>
+                                                <span class="badge skill-tag rounded-pill">APIs</span>
                                             </div>
-                                        </div>
-                                        <p class="card-text small text-muted">
-                                            Applications interactives avec JavaScript moderne
-                                        </p>
-                                        <div class="d-flex flex-wrap gap-2">
-                                            <span class="badge skill-tag rounded-pill">Async/Await</span>
-                                            <span class="badge skill-tag rounded-pill">DOM</span>
-                                            <span class="badge skill-tag rounded-pill">APIs</span>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">React.js</h5>
-                                        <div class="mb-3">
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <small>Avancé</small>
-                                                <small>80%</small>
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">React.js</h5>
+                                            <div class="mb-3">
+                                                <div class="d-flex justify-content-between mb-1">
+                                                    <small>Avancé</small>
+                                                    <small>80%</small>
+                                                </div>
+                                                <div class="progress" style="height: 8px">
+                                                    <div class="progress-bar bg-dark" style="width: 80%"></div>
+                                                </div>
                                             </div>
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-dark" style="width: 80%"></div>
+                                            <p class="card-text small text-muted">
+                                                Interfaces utilisateur dynamiques et performantes
+                                            </p>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge skill-tag rounded-pill">Hooks</span>
+                                                <span class="badge skill-tag rounded-pill">Context</span>
+                                                <span class="badge skill-tag rounded-pill">Redux</span>
                                             </div>
-                                        </div>
-                                        <p class="card-text small text-muted">
-                                            Interfaces utilisateur dynamiques et performantes
-                                        </p>
-                                        <div class="d-flex flex-wrap gap-2">
-                                            <span class="badge skill-tag rounded-pill">Hooks</span>
-                                            <span class="badge skill-tag rounded-pill">Context</span>
-                                            <span class="badge skill-tag rounded-pill">Redux</span>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Bootstrap / Tailwind</h5>
-                                        <div class="mb-3">
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <small>Expert</small>
-                                                <small>90%</small>
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Bootstrap / Tailwind</h5>
+                                            <div class="mb-3">
+                                                <div class="d-flex justify-content-between mb-1">
+                                                    <small>Expert</small>
+                                                    <small>90%</small>
+                                                </div>
+                                                <div class="progress" style="height: 8px">
+                                                    <div class="progress-bar bg-dark" style="width: 90%"></div>
+                                                </div>
                                             </div>
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-dark" style="width: 90%"></div>
+                                            <p class="card-text small text-muted">
+                                                Frameworks CSS pour développement rapide
+                                            </p>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge skill-tag rounded-pill">Utility-first</span>
+                                                <span class="badge skill-tag rounded-pill">Components</span>
                                             </div>
-                                        </div>
-                                        <p class="card-text small text-muted">
-                                            Frameworks CSS pour développement rapide
-                                        </p>
-                                        <div class="d-flex flex-wrap gap-2">
-                                            <span class="badge skill-tag rounded-pill">Utility-first</span>
-                                            <span class="badge skill-tag rounded-pill">Components</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Backend -->
-                    <div class="tab-pane fade" id="backend">
-                        <h3 class="mb-4 border-bottom border-3 border-dark pb-3">
-                            <i class="fas fa-server me-2"></i> Développement Backend
-                        </h3>
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Node.js</h5>
-                                        <div class="mb-3">
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <small>Intermédiaire</small>
-                                                <small>70%</small>
+                        <div class="tab-pane fade" id="backend">
+                            <h3 class="mb-4 border-bottom border-3 border-dark pb-3">
+                                <i class="fas fa-server me-2"></i> Développement Backend
+                            </h3>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Node.js</h5>
+                                            <div class="mb-3">
+                                                <div class="d-flex justify-content-between mb-1">
+                                                    <small>Intermédiaire</small>
+                                                    <small>70%</small>
+                                                </div>
+                                                <div class="progress" style="height: 8px">
+                                                    <div class="progress-bar bg-dark" style="width: 70%"></div>
+                                                </div>
                                             </div>
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-dark" style="width: 70%"></div>
+                                            <p class="card-text small text-muted">
+                                                Développement d'APIs et applications serveur
+                                            </p>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge skill-tag rounded-pill">Express</span>
+                                                <span class="badge skill-tag rounded-pill">REST API</span>
                                             </div>
-                                        </div>
-                                        <p class="card-text small text-muted">
-                                            Développement d'APIs et applications serveur
-                                        </p>
-                                        <div class="d-flex flex-wrap gap-2">
-                                            <span class="badge skill-tag rounded-pill">Express</span>
-                                            <span class="badge skill-tag rounded-pill">REST API</span>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">PHP</h5>
-                                        <div class="mb-3">
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <small>Avancé</small>
-                                                <small>75%</small>
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">PHP</h5>
+                                            <div class="mb-3">
+                                                <div class="d-flex justify-content-between mb-1">
+                                                    <small>Avancé</small>
+                                                    <small>75%</small>
+                                                </div>
+                                                <div class="progress" style="height: 8px">
+                                                    <div class="progress-bar bg-dark" style="width: 75%"></div>
+                                                </div>
                                             </div>
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-dark" style="width: 75%"></div>
+                                            <p class="card-text small text-muted">
+                                                Programmation serveur et bases de données
+                                            </p>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge skill-tag rounded-pill">POO</span>
+                                                <span class="badge skill-tag rounded-pill">Laravel</span>
                                             </div>
-                                        </div>
-                                        <p class="card-text small text-muted">
-                                            Programmation serveur et bases de données
-                                        </p>
-                                        <div class="d-flex flex-wrap gap-2">
-                                            <span class="badge skill-tag rounded-pill">POO</span>
-                                            <span class="badge skill-tag rounded-pill">Laravel</span>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">MySQL / MongoDB</h5>
-                                        <div class="mb-3">
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <small>Avancé</small>
-                                                <small>80%</small>
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">MySQL / MongoDB</h5>
+                                            <div class="mb-3">
+                                                <div class="d-flex justify-content-between mb-1">
+                                                    <small>Avancé</small>
+                                                    <small>80%</small>
+                                                </div>
+                                                <div class="progress" style="height: 8px">
+                                                    <div class="progress-bar bg-dark" style="width: 80%"></div>
+                                                </div>
                                             </div>
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-dark" style="width: 80%"></div>
+                                            <p class="card-text small text-muted">
+                                                Conception et gestion de bases de données
+                                            </p>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge skill-tag rounded-pill">SQL</span>
+                                                <span class="badge skill-tag rounded-pill">NoSQL</span>
                                             </div>
-                                        </div>
-                                        <p class="card-text small text-muted">
-                                            Conception et gestion de bases de données
-                                        </p>
-                                        <div class="d-flex flex-wrap gap-2">
-                                            <span class="badge skill-tag rounded-pill">SQL</span>
-                                            <span class="badge skill-tag rounded-pill">NoSQL</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Design -->
-                    <div class="tab-pane fade" id="design">
-                        <h3 class="mb-4 border-bottom border-3 border-dark pb-3">
-                            <i class="fas fa-palette me-2"></i> Design & UI/UX
-                        </h3>
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Figma</h5>
-                                        <div class="mb-3">
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <small>Avancé</small>
-                                                <small>85%</small>
-                                            </div>
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-dark" style="width: 85%"></div>
-                                            </div>
-                                        </div>
-                                        <p class="card-text small text-muted">
-                                            Prototypage et design d'interfaces
-                                        </p>
-                                        <div class="d-flex flex-wrap gap-2">
-                                            <span class="badge skill-tag rounded-pill">Prototyping</span>
-                                            <span class="badge skill-tag rounded-pill">Components</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Adobe XD</h5>
-                                        <div class="mb-3">
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <small>Intermédiaire</small>
-                                                <small>70%</small>
-                                            </div>
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-dark" style="width: 70%"></div>
-                                            </div>
-                                        </div>
-                                        <p class="card-text small text-muted">
-                                            Design et prototypes interactifs
-                                        </p>
-                                        <div class="d-flex flex-wrap gap-2">
-                                            <span class="badge skill-tag rounded-pill">UI Design</span>
-                                            <span class="badge skill-tag rounded-pill">Wireframing</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Outils -->
-                    <div class="tab-pane fade" id="tools">
-                        <h3 class="mb-4 border-bottom border-3 border-dark pb-3">
-                            <i class="fas fa-tools me-2"></i> Outils & Technologies
-                        </h3>
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Git / GitHub</h5>
-                                        <div class="mb-3">
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <small>Avancé</small>
-                                                <small>85%</small>
+                        <div class="tab-pane fade" id="design">
+                            <h3 class="mb-4 border-bottom border-3 border-dark pb-3">
+                                <i class="fas fa-palette me-2"></i> Design & UI/UX
+                            </h3>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Figma</h5>
+                                            <div class="mb-3">
+                                                <div class="d-flex justify-content-between mb-1">
+                                                    <small>Avancé</small>
+                                                    <small>85%</small>
+                                                </div>
+                                                <div class="progress" style="height: 8px">
+                                                    <div class="progress-bar bg-dark" style="width: 85%"></div>
+                                                </div>
                                             </div>
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-dark" style="width: 85%"></div>
+                                            <p class="card-text small text-muted">Prototypage et design d'interfaces</p>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge skill-tag rounded-pill">Prototyping</span>
+                                                <span class="badge skill-tag rounded-pill">Components</span>
                                             </div>
-                                        </div>
-                                        <p class="card-text small text-muted">
-                                            Contrôle de version et collaboration
-                                        </p>
-                                        <div class="d-flex flex-wrap gap-2">
-                                            <span class="badge skill-tag rounded-pill">Version Control</span>
-                                            <span class="badge skill-tag rounded-pill">Collaboration</span>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">VS Code</h5>
-                                        <div class="mb-3">
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <small>Expert</small>
-                                                <small>95%</small>
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Adobe XD</h5>
+                                            <div class="mb-3">
+                                                <div class="d-flex justify-content-between mb-1">
+                                                    <small>Intermédiaire</small>
+                                                    <small>70%</small>
+                                                </div>
+                                                <div class="progress" style="height: 8px">
+                                                    <div class="progress-bar bg-dark" style="width: 70%"></div>
+                                                </div>
                                             </div>
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-dark" style="width: 95%"></div>
+                                            <p class="card-text small text-muted">Design et prototypes interactifs</p>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge skill-tag rounded-pill">UI Design</span>
+                                                <span class="badge skill-tag rounded-pill">Wireframing</span>
                                             </div>
-                                        </div>
-                                        <p class="card-text small text-muted">
-                                            Environnement de développement
-                                        </p>
-                                        <div class="d-flex flex-wrap gap-2">
-                                            <span class="badge skill-tag rounded-pill">Extensions</span>
-                                            <span class="badge skill-tag rounded-pill">Debugging</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Soft Skills -->
-                    <div class="tab-pane fade" id="soft">
-                        <h3 class="mb-4 border-bottom border-3 border-dark pb-3">
-                            <i class="fas fa-lightbulb me-2"></i> Compétences Transversales
-                        </h3>
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Travail d'équipe</h5>
-                                        <p class="card-text">
-                                            Collaboration efficace et communication dans des projets en équipe.
-                                        </p>
+                        <div class="tab-pane fade" id="tools">
+                            <h3 class="mb-4 border-bottom border-3 border-dark pb-3">
+                                <i class="fas fa-tools me-2"></i> Outils & Technologies
+                            </h3>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Git / GitHub</h5>
+                                            <div class="mb-3">
+                                                <div class="d-flex justify-content-between mb-1">
+                                                    <small>Avancé</small>
+                                                    <small>85%</small>
+                                                </div>
+                                                <div class="progress" style="height: 8px">
+                                                    <div class="progress-bar bg-dark" style="width: 85%"></div>
+                                                </div>
+                                            </div>
+                                            <p class="card-text small text-muted">
+                                                Contrôle de version et collaboration
+                                            </p>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge skill-tag rounded-pill">Version Control</span>
+                                                <span class="badge skill-tag rounded-pill">Collaboration</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">VS Code</h5>
+                                            <div class="mb-3">
+                                                <div class="d-flex justify-content-between mb-1">
+                                                    <small>Expert</small>
+                                                    <small>95%</small>
+                                                </div>
+                                                <div class="progress" style="height: 8px">
+                                                    <div class="progress-bar bg-dark" style="width: 95%"></div>
+                                                </div>
+                                            </div>
+                                            <p class="card-text small text-muted">Environnement de développement</p>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge skill-tag rounded-pill">Extensions</span>
+                                                <span class="badge skill-tag rounded-pill">Debugging</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Résolution de problèmes</h5>
-                                        <p class="card-text">
-                                            Approche analytique pour trouver des solutions créatives.
-                                        </p>
+                        </div>
+                        <div class="tab-pane fade" id="soft">
+                            <h3 class="mb-4 border-bottom border-3 border-dark pb-3">
+                                <i class="fas fa-lightbulb me-2"></i> Compétences Transversales
+                            </h3>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Travail d'équipe</h5>
+                                            <p class="card-text">
+                                                Collaboration efficace et communication dans des projets en équipe.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Gestion du temps</h5>
-                                        <p class="card-text">
-                                            Priorisation des tâches et respect des délais.
-                                        </p>
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Résolution de problèmes</h5>
+                                            <p class="card-text">
+                                                Approche analytique pour trouver des solutions créatives.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card skill-card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Apprentissage continu</h5>
-                                        <p class="card-text">
-                                            Passion pour apprendre de nouvelles technologies.
-                                        </p>
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Gestion du temps</h5>
+                                            <p class="card-text">Priorisation des tâches et respect des délais.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card skill-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Apprentissage continu</h5>
+                                            <p class="card-text">Passion pour apprendre de nouvelles technologies.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -404,9 +387,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
