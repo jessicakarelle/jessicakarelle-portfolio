@@ -8,7 +8,6 @@ const observer = new IntersectionObserver(
     },
     { threshold: 0.1 }
 );
-
 document.querySelectorAll(".box").forEach((el) => {
     observer.observe(el);
 });

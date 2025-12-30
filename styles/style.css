@@ -1,11 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 :root {
     --black: #000000;
     --white: #ffffff;
@@ -14,28 +12,23 @@
     --gray-light: #666666;
     --gray-lighter: #999999;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 ul:not(.modal ul) {
     list-style: none;
     padding: 0;
 }
-
 footer a {
     display: inline-block;
     color: #ccc;
     text-decoration: none;
     transition: all 0.3s ease;
 }
-
 footer a:hover {
     color: white;
-    transform: translateX(6px)
+    transform: translateX(6px);
 }
-
 body {
     font-family: "Inter", sans-serif;
     background: var(--black);
@@ -43,8 +36,6 @@ body {
     overflow-x: hidden;
     line-height: 1.6;
 }
-
-/* Background animé */
 .bg-grid {
     position: fixed;
     top: 0;
@@ -57,7 +48,6 @@ body {
     z-index: -1;
     animation: gridMove 20s linear infinite;
 }
-
 @keyframes gridMove {
     0% {
         transform: translate(0, 0);
@@ -66,8 +56,6 @@ body {
         transform: translate(50px, 50px);
     }
 }
-
-/* Navigation */
 nav {
     position: sticky !important;
     top: 0;
@@ -78,7 +66,6 @@ nav {
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-
 .navbar-brand {
     font-family: "Space Grotesk", sans-serif;
     font-size: 1.5rem;
@@ -86,7 +73,6 @@ nav {
     letter-spacing: -0.02em;
     color: var(--white) !important;
 }
-
 .nav-link {
     color: var(--gray-lighter) !important;
     font-size: 0.95rem;
@@ -95,7 +81,6 @@ nav {
     transition: color 0.3s;
     padding: 0.5rem 1rem !important;
 }
-
 .nav-link::before {
     content: "";
     position: absolute;
@@ -106,15 +91,12 @@ nav {
     background: var(--white);
     transition: width 0.3s;
 }
-
 .nav-link:hover {
     color: var(--white) !important;
 }
-
 .nav-link:hover::before {
     width: calc(100% - 2rem);
 }
-
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -123,7 +105,6 @@ nav {
     position: relative;
     overflow: hidden;
 }
-
 .hero-title {
     font-family: "Space Grotesk", sans-serif;
     font-size: clamp(2.5rem, 8vw, 5rem);
@@ -132,7 +113,6 @@ nav {
     letter-spacing: -0.03em;
     margin-bottom: 2rem;
 }
-
 .hero-presentation-text {
     font-size: clamp(1rem, 2vw, 1.25rem);
     color: var(--gray-lighter);
@@ -140,7 +120,6 @@ nav {
     margin-bottom: 3rem;
     line-height: 1.8;
 }
-
 .btn-dark {
     background: var(--white);
     color: var(--black);
@@ -149,19 +128,15 @@ nav {
     font-weight: 600;
     transition: all 0.3s;
 }
-
 .btn-dark:hover {
     background: transparent;
     color: var(--white);
     border-color: var(--white);
     transform: translateY(-3px);
 }
-
-/* Sections */
 section:not(.hero-section, .projects-section) {
     padding: 8rem 0;
 }
-
 .section-title {
     font-family: "Space Grotesk", sans-serif;
     font-size: clamp(2rem, 5vw, 3.5rem);
@@ -169,28 +144,23 @@ section:not(.hero-section, .projects-section) {
     margin-bottom: 4rem;
     letter-spacing: -0.02em;
 }
-
-/* Featured Section */
 .featured-section {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 4rem 2rem;
     margin: 4rem 0;
 }
-
 .featured-img {
     width: 100%;
     height: 400px;
     object-fit: cover;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 .about-section {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 4rem 2rem;
 }
-
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -198,55 +168,45 @@ section:not(.hero-section, .projects-section) {
     align-items: center;
     margin-top: 3rem;
 }
-
 .about-text {
     font-size: 1.1rem;
     color: var(--gray-lighter);
     line-height: 1.8;
 }
-
 .about-stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
-
 .stat-item {
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 2rem;
     transition: all 0.3s;
     text-align: center;
 }
-
 .stat-item:hover {
     border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-5px);
 }
-
 .stat-number {
     font-family: "Space Grotesk", sans-serif;
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
-
 .stat-label {
     color: var(--gray-lighter);
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
-
-/* Projets - Sticky Cards Effect */
 .projects-section {
     padding: 4rem 0;
 }
-
 .projects-container {
     position: relative;
     padding: 2rem 0;
 }
-
 .project-card {
     position: sticky;
     background: rgba(255, 255, 255, 0.02);
@@ -260,7 +220,6 @@ section:not(.hero-section, .projects-section) {
     flex-direction: column;
     justify-content: center;
 }
-
 .project-1 {
     top: 80px;
 }
@@ -273,19 +232,16 @@ section:not(.hero-section, .projects-section) {
 .project-4 {
     top: 140px;
 }
-
 .project-card:hover {
     border-color: rgba(255, 255, 255, 0.2);
     transform: translateX(10px);
 }
-
 .project-title {
     font-family: "Space Grotesk", sans-serif;
     font-size: 1.75rem;
     font-weight: 600;
     margin-bottom: 1rem;
 }
-
 .project-context {
     color: var(--gray-light);
     font-size: 0.9rem;
@@ -293,13 +249,11 @@ section:not(.hero-section, .projects-section) {
     letter-spacing: 0.1em;
     margin-bottom: 1rem;
 }
-
 .project-description {
     color: var(--gray-lighter);
     margin-bottom: 1.5rem;
     line-height: 1.7;
 }
-
 .project-tech {
     display: flex;
     gap: 1rem;
@@ -308,7 +262,6 @@ section:not(.hero-section, .projects-section) {
     padding: 0;
     margin-bottom: 2rem;
 }
-
 .project-tech li {
     padding: 0.5rem 1rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -317,66 +270,53 @@ section:not(.hero-section, .projects-section) {
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
-
 .btn-outline-secondary {
     color: var(--white);
     border-color: rgba(255, 255, 255, 0.2);
     transition: all 0.3s;
 }
-
 .btn-outline-secondary:hover {
     background: var(--white);
     color: var(--black);
     border-color: var(--white);
 }
-
-/* Compétences */
 .skills-section {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 4rem 2rem;
 }
-
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
-
 .skill-category {
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 2.5rem;
     transition: all 0.3s;
 }
-
 .skill-category:hover {
     border-color: rgba(255, 255, 255, 0.2);
 }
-
 .skill-category h3 {
     font-family: "Space Grotesk", sans-serif;
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
 }
-
 .skill-list {
     list-style: none;
     padding: 0;
 }
-
 .skill-list li {
     color: var(--gray-lighter);
     padding: 0.75rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-
 .skill-list li:last-child {
     border-bottom: none;
 }
-
-/* Contact */
 .contact-section {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -418,8 +358,6 @@ section:not(.hero-section, .projects-section) {
     font-size: 1.1rem;
     font-weight: 600;
 }
-
-/* Footer */
 .footer-complete {
     background: var(--black);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -453,7 +391,6 @@ section:not(.hero-section, .projects-section) {
         transform: translateY(0);
     }
 }
-
 .box {
     opacity: 0;
     transform: translateY(30px);
@@ -461,29 +398,21 @@ section:not(.hero-section, .projects-section) {
         opacity 0.6s ease,
         transform 0.6s ease;
 }
-
 .box.visible {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* Modals */
 .modal-content {
     background: var(--gray-dark);
     color: var(--white);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 .modal-header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 .modal-footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 .btn-close {
     filter: invert(1);
 }
-
-
