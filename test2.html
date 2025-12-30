@@ -3,148 +3,754 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Projets avec Modals</title>
+        <title>Jessica Karelle - Développeuse</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <style>
-            .project-card {
-                transition:
-                    transform 0.3s,
-                    box-shadow 0.3s;
-                border: none;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            }
-            .project-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            }
-            .project-tech {
-                list-style: none;
+            @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+            * {
+                margin: 0;
                 padding: 0;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
+                box-sizing: border-box;
             }
-            .project-tech li {
-                background: #f0f0f0;
-                padding: 5px 12px;
-                border-radius: 15px;
-                font-size: 0.85rem;
+
+            :root {
+                --black: #000000;
+                --white: #ffffff;
+                --gray-dark: #1a1a1a;
+                --gray-medium: #333333;
+                --gray-light: #666666;
+                --gray-lighter: #999999;
+                --accent-pink: #ec4899;
+                --accent-purple: #8b5cf6;
             }
-            .modal-img {
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: "Inter", sans-serif;
+                background: var(--black);
+                color: var(--white);
+                overflow-x: hidden;
+                line-height: 1.6;
+            }
+
+            /* Background animé */
+            .bg-grid {
+                position: fixed;
+                top: 0;
+                left: 0;
                 width: 100%;
-                height: auto;
-                border-radius: 8px;
-                margin-bottom: 15px;
+                height: 100%;
+                background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+                background-size: 50px 50px;
+                z-index: -1;
+                animation: gridMove 20s linear infinite;
             }
-            .carousel-item img {
+
+            @keyframes gridMove {
+                0% {
+                    transform: translate(0, 0);
+                }
+                100% {
+                    transform: translate(50px, 50px);
+                }
+            }
+
+            /* Navigation */
+            nav {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                padding: 1.5rem 0;
+                background: rgba(0, 0, 0, 0.8);
+                backdrop-filter: blur(20px);
+                z-index: 1000;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .navbar-brand {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 1.5rem;
+                font-weight: 700;
+                letter-spacing: -0.02em;
+                color: var(--white) !important;
+            }
+
+            .nav-link {
+                color: var(--gray-lighter) !important;
+                font-size: 0.95rem;
+                font-weight: 400;
+                position: relative;
+                transition: color 0.3s;
+                padding: 0.5rem 1rem !important;
+            }
+
+            .nav-link::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 1rem;
+                width: 0;
+                height: 1px;
+                background: var(--white);
+                transition: width 0.3s;
+            }
+
+            .nav-link:hover {
+                color: var(--white) !important;
+            }
+
+            .nav-link:hover::before {
+                width: calc(100% - 2rem);
+            }
+
+            /* Hero Section avec formes géométriques */
+            .hero-section {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                padding-top: 100px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .geometric-bg {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 50%;
+                height: 100%;
+                overflow: hidden;
+                opacity: 0.03;
+            }
+
+            .shape {
+                position: absolute;
+                border: 2px solid var(--white);
+            }
+
+            .shape-1 {
+                width: 400px;
+                height: 400px;
+                border-radius: 50%;
+                top: 10%;
+                right: 10%;
+                animation: float 6s ease-in-out infinite;
+            }
+
+            .shape-2 {
+                width: 250px;
+                height: 250px;
+                top: 60%;
+                right: 30%;
+                animation: float 8s ease-in-out infinite 1s;
+            }
+
+            @keyframes float {
+                0%,
+                100% {
+                    transform: translateY(0) rotate(0deg);
+                }
+                50% {
+                    transform: translateY(-30px) rotate(180deg);
+                }
+            }
+
+            .hero-title {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: clamp(2.5rem, 8vw, 5rem);
+                font-weight: 700;
+                line-height: 1.1;
+                letter-spacing: -0.03em;
+                margin-bottom: 2rem;
+            }
+
+            .gradient-text {
+                background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .hero-presentation-text {
+                font-size: clamp(1rem, 2vw, 1.25rem);
+                color: var(--gray-lighter);
+                max-width: 600px;
+                margin-bottom: 3rem;
+                line-height: 1.8;
+            }
+
+            .btn-dark {
+                background: var(--white);
+                color: var(--black);
+                border: 2px solid var(--white);
+                padding: 1rem 2.5rem;
+                font-weight: 600;
+                transition: all 0.3s;
+            }
+
+            .btn-dark:hover {
+                background: transparent;
+                color: var(--white);
+                border-color: var(--white);
+                transform: translateY(-3px);
+            }
+
+            /* Sections */
+            section:not(.hero-section, .projects-section) {
+                padding: 8rem 0;
+            }
+
+            .section-title {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: clamp(2rem, 5vw, 3.5rem);
+                font-weight: 700;
+                margin-bottom: 4rem;
+                letter-spacing: -0.02em;
+            }
+
+            /* Featured Section */
+            .featured-section {
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 4rem 2rem;
+                margin: 4rem 0;
+            }
+
+            .featured-img {
+                width: 100%;
                 height: 400px;
                 object-fit: cover;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            /* À propos avec stats */
+            .about-section {
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 4rem 2rem;
+            }
+
+            .about-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+                align-items: center;
+                margin-top: 3rem;
+            }
+
+            .about-text {
+                font-size: 1.1rem;
+                color: var(--gray-lighter);
+                line-height: 1.8;
+            }
+
+            .about-stats {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .stat-item {
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 2rem;
+                transition: all 0.3s;
+                text-align: center;
+            }
+
+            .stat-item:hover {
+                border-color: rgba(255, 255, 255, 0.3);
+                transform: translateY(-5px);
+            }
+
+            .stat-number {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 3rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+            }
+
+            .stat-label {
+                color: var(--gray-lighter);
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+            }
+
+            /* Projets - Sticky Cards Effect */
+            .projects-section {
+                padding: 4rem 0;
+            }
+
+            .projects-container {
+                position: relative;
+                padding: 2rem 0;
+            }
+
+            .project-card {
+                position: sticky;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 3rem;
+                margin-bottom: 2rem;
+                transition: all 0.5s;
+                min-height: 400px;
+                display: flex;
+                background-color: black;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .project-1 {
+                top: 80px;
+            }
+            .project-2 {
+                top: 100px;
+            }
+            .project-3 {
+                top: 120px;
+            }
+            .project-4 {
+                top: 140px;
+            }
+
+            .project-card:hover {
+                border-color: rgba(255, 255, 255, 0.2);
+                transform: translateX(10px);
+            }
+
+            .project-title {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 1.75rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+
+            .project-context {
+                color: var(--gray-light);
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin-bottom: 1rem;
+            }
+
+            .project-description {
+                color: var(--gray-lighter);
+                margin-bottom: 1.5rem;
+                line-height: 1.7;
+            }
+
+            .project-tech {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+                list-style: none;
+                padding: 0;
+                margin-bottom: 2rem;
+            }
+
+            .project-tech li {
+                padding: 0.5rem 1rem;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                font-size: 0.85rem;
+                color: var(--gray-lighter);
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+
+            .btn-outline-secondary {
+                color: var(--white);
+                border-color: rgba(255, 255, 255, 0.2);
+                transition: all 0.3s;
+            }
+
+            .btn-outline-secondary:hover {
+                background: var(--white);
+                color: var(--black);
+                border-color: var(--white);
+            }
+
+            /* Compétences */
+            .skills-section {
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 4rem 2rem;
+            }
+
+            .skills-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+
+            .skill-category {
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 2.5rem;
+                transition: all 0.3s;
+            }
+
+            .skill-category:hover {
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+
+            .skill-category h3 {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 1.25rem;
+                margin-bottom: 1.5rem;
+                font-weight: 600;
+            }
+
+            .skill-list {
+                list-style: none;
+                padding: 0;
+            }
+
+            .skill-list li {
+                color: var(--gray-lighter);
+                padding: 0.75rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .skill-list li:last-child {
+                border-bottom: none;
+            }
+
+            /* Contact */
+            .contact-section {
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 4rem 2rem;
+                text-align: center;
+            }
+
+            .contact-methods {
+                display: flex;
+                gap: 2rem;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 3rem;
+            }
+
+            .contact-method {
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                padding: 2rem 3rem;
+                text-decoration: none;
+                color: var(--white);
+                transition: all 0.3s;
+                min-width: 250px;
+            }
+
+            .contact-method:hover {
+                background: var(--white);
+                color: var(--black);
+                transform: translateY(-5px);
+            }
+
+            .contact-method-label {
+                font-size: 0.85rem;
+                color: var(--gray-lighter);
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin-bottom: 0.5rem;
+            }
+
+            .contact-method:hover .contact-method-label {
+                color: var(--gray-medium);
+            }
+
+            .contact-method-value {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+
+            /* Footer */
+            .footer-complete {
+                background: var(--black);
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 4rem 0 2rem;
+            }
+
+            .social-icon {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                background: var(--white);
+                color: var(--black);
+                border-radius: 50%;
+                margin-right: 10px;
+                transition: all 0.3s;
+                text-decoration: none;
+            }
+
+            .social-icon:hover {
+                background: var(--gray-lighter);
+                transform: translateY(-3px);
+            }
+
+            /* Animations */
+            .fade-in {
+                opacity: 0;
+                transform: translateY(30px);
+                animation: fadeIn 0.8s forwards;
+            }
+
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .box {
+                opacity: 0;
+                transform: translateY(30px);
+                transition:
+                    opacity 0.6s ease,
+                    transform 0.6s ease;
+            }
+
+            .box.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Modals */
+            .modal-content {
+                background: var(--gray-dark);
+                color: var(--white);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .modal-header {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .modal-footer {
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .btn-close {
+                filter: invert(1);
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                .about-content {
+                    grid-template-columns: 1fr;
+                }
+
+                .about-stats {
+                    grid-template-columns: 1fr;
+                }
+
+                .skills-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .project-card {
+                    position: relative !important;
+                    top: 0 !important;
+                }
             }
         </style>
     </head>
-    <body class="bg-light">
-        <!-- Section Projets avec Modals - À remplacer dans ton HTML -->
-        <section id="projects-section" class="projects-section container mt-4">
-            <h2 class="projects-title text-center mb-5">Mes réalisations</h2>
+    <body>
+        <div class="bg-grid"></div>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-md">
+            <div class="container">
+                <a href="#home-section" class="navbar-brand">Jessica Karelle</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarList">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarList">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="#home-section" class="nav-link">Accueil</a></li>
+                        <li class="nav-item"><a href="#about-section" class="nav-link">À propos</a></li>
+                        <li class="nav-item"><a href="#projects-section" class="nav-link">Projets</a></li>
+                        <li class="nav-item"><a href="#skills-section" class="nav-link">Compétences</a></li>
+                        <li class="nav-item"><a href="#contact-section" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home-section" class="hero-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="hero-title fade-in">
+                            Développeuse <span class="gradient-text">C#</span><br />
+                            Web, Apps & Jeux 2D
+                        </h1>
+                        <p class="hero-presentation-text fade-in" style="animation-delay: 0.2s">
+                            Je crée des expériences numériques simples, élégantes et efficaces. Passionnée par le code
+                            propre et les solutions créatives.
+                        </p>
+                        <a
+                            href="assets/docs/CV_Jessica_Karelle.pdf"
+                            target="_blank"
+                            class="btn btn-dark rounded-0 fade-in"
+                            style="animation-delay: 0.4s">
+                            Télécharger mon CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Project -->
+        <section class="featured-section container box m-auto">
+            <h2 class="section-title">Projet en vedette</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img
+                        src="assets/imgs/background-image-unsplash-guns.jpg"
+                        class="featured-img"
+                        alt="Projet vedette" />
+                </div>
+                <div class="col-md-6">
+                    <h3>Survie en terre inconnue</h3>
+                    <h4 class="mb-3">Jeu Console C#</h4>
+                    <p>
+                        Jeu d'aventures développé en C# où le joueur doit survivre dans un territoire inconnu. Collecte
+                        de ressources, construction d'abri et gestion de survie avant l'arrivée de l'hiver. Système de
+                        sauvegarde JSON et gameplay basé sur les choix du joueur.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- À propos avec stats -->
+        <section id="about-section" class="about-section container box">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="mb-3">
+                        Développeuse passionnée spécialisée en C#, je conçois des solutions web, des applications et des
+                        jeux 2D avec un focus sur la simplicité et l'efficacité.
+                    </p>
+                    <p>
+                        Mon approche combine créativité technique et attention aux détails pour créer des expériences
+                        utilisateur mémorables et fonctionnelles.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Projets</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Années</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Qualité</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Café</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects-section" class="projects-section container">
+            <h2 class="section-title">Mes réalisations</h2>
             <div class="projects-container">
-                <!-- Projet 1 -->
                 <article class="project-card project-1 box">
-                    <h3 class="project-title">Jeu de Survie en Console</h3>
-                    <p class="project-context">Projet académique - Jeu d'aventure textuel</p>
+                    <h3 class="project-title">Jeu console : Survie en terre inconnue</h3>
+                    <p class="project-context">Projet académique - Jeu d'aventure</p>
                     <p class="project-description">
-                        Jeu d'aventure en mode console développé en Python. Le joueur doit survivre dans un territoire
-                        inconnu en gérant ses ressources, prenant des décisions stratégiques et explorant différents
-                        environnements. Système de combat, inventaire et quêtes multiples.
+                        Jeu d'aventures en mode console développé en C#. Le joueur doit survivre dans un territoire
+                        inconnu en collectant des ressources afin de se construire une maison pour survivre au froid
+                        hivernal.
                     </p>
                     <ul class="project-tech">
-                        <li>Python</li>
-                        <li>POO</li>
-                        <li>Algorithmes</li>
+                        <li>C#</li>
+                        <li>Modularité</li>
+                        <li>Gestion de listes</li>
+                        <li>Sauvegarde JSON</li>
                     </ul>
                     <div class="project-links">
-                        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal1">
-                            <i class="fas fa-eye me-2"></i>Voir le projet
+                        <button
+                            class="btn btn-outline-secondary rounded-0"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modal1">
+                            Voir le projet
                         </button>
                         <a
                             href="https://github.com/jktchikapa/survival-in-unknown-territory-console-game-project"
                             target="_blank"
-                            class="btn btn-outline btn-dark rounded-0">
+                            class="btn btn-outline-secondary rounded-0 ms-2">
                             <i class="fa-brands fa-github"></i> GitHub
                         </a>
                     </div>
                 </article>
 
-                <!-- Projet 2 -->
                 <article class="project-card project-2 box">
                     <h3 class="project-title">Site Web Coco Chanel</h3>
                     <p class="project-context">Projet scolaire - Site biographique</p>
                     <p class="project-description">
                         Site web élégant dédié à l'histoire de Coco Chanel et de sa marque emblématique. Design
-                        responsive avec galerie d'images, timeline historique et sections thématiques. Mise en page
-                        soignée avec animations CSS et navigation fluide.
+                        responsive avec galerie d'images, timeline historique et sections thématiques.
                     </p>
                     <ul class="project-tech">
                         <li>HTML5</li>
                         <li>CSS3</li>
                         <li>JavaScript</li>
+                        <li>Bootstrap</li>
                     </ul>
                     <div class="project-links">
-                        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal2">
-                            <i class="fas fa-eye me-2"></i>Voir le projet
+                        <button
+                            class="btn btn-outline-secondary rounded-0"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modal2">
+                            Voir le projet
                         </button>
                         <a
                             href="https://github.com/jktchikapa/coco-chanel-website-school-project"
                             target="_blank"
-                            class="btn btn-outline btn-dark rounded-0">
+                            class="btn btn-outline-secondary rounded-0 ms-2">
                             <i class="fa-brands fa-github"></i> GitHub
                         </a>
                     </div>
                 </article>
 
-                <!-- Projet 3 -->
                 <article class="project-card project-3 box">
-                    <h3 class="project-title">Application de Gestion de Tâches</h3>
-                    <p class="project-context">Projet personnel - Productivité</p>
+                    <h3 class="project-title">Portfolio Personnel</h3>
+                    <p class="project-context">Projet personnel - Portfolio développeur</p>
                     <p class="project-description">
-                        Application web de gestion de tâches avec interface moderne. Permet de créer, organiser et
-                        suivre des tâches avec système de priorités, dates d'échéance et catégories. Interface drag &
-                        drop pour réorganiser les tâches facilement.
+                        Portfolio moderne avec design minimaliste noir et blanc. Animations fluides, transitions
+                        élégantes et mise en page responsive avec effets visuels sophistiqués.
                     </p>
                     <ul class="project-tech">
-                        <li>React</li>
-                        <li>Node.js</li>
-                        <li>MongoDB</li>
-                    </ul>
-                    <div class="project-links">
-                        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal3">
-                            <i class="fas fa-eye me-2"></i>Voir le projet
-                        </button>
-                        <a href="#" target="_blank" class="btn btn-outline btn-dark rounded-0">
-                            <i class="fa-brands fa-github"></i> GitHub
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Projet 4 -->
-                <article class="project-card project-4 box">
-                    <h3 class="project-title">Portfolio Interactif</h3>
-                    <p class="project-context">Projet professionnel - Vitrine personnelle</p>
-                    <p class="project-description">
-                        Site portfolio moderne avec animations fluides et design minimaliste. Présentation de projets,
-                        compétences et coordonnées. Optimisé pour tous les appareils avec un accent sur l'expérience
-                        utilisateur et les performances.
-                    </p>
-                    <ul class="project-tech">
-                        <li>HTML/CSS</li>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
                         <li>JavaScript</li>
-                        <li>Bootstrap</li>
+                        <li>Animations</li>
                     </ul>
                     <div class="project-links">
-                        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modal4">
-                            <i class="fas fa-eye me-2"></i>Voir le projet
+                        <button
+                            class="btn btn-outline-secondary rounded-0"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modal3">
+                            Voir le projet
                         </button>
-                        <a href="#" target="_blank" class="btn btn-outline btn-dark rounded-0">
+                        <a href="#" target="_blank" class="btn btn-outline-secondary rounded-0 ms-2">
                             <i class="fa-brands fa-github"></i> GitHub
                         </a>
                     </div>
@@ -152,18 +758,67 @@
             </div>
         </section>
 
-        <!-- MODALS - À ajouter juste avant la fermeture de </body> -->
+        <!-- Compétences -->
+        <section id="skills-section" class="skills-section container box">
+            <h2 class="section-title">Mes atouts</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Développement</h3>
+                    <ul class="skill-list">
+                        <li>C# / .NET</li>
+                        <li>HTML5 / CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Bootstrap</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Outils & Workflow</h3>
+                    <ul class="skill-list">
+                        <li>Git / GitHub</li>
+                        <li>Visual Studio Code</li>
+                        <li>Visual Studio</li>
+                        <li>Figma</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Spécialités</h3>
+                    <ul class="skill-list">
+                        <li>Game Development 2D</li>
+                        <li>Web Design</li>
+                        <li>UI/UX</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        <!-- Modal Projet 1 -->
-        <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+        <!-- Contact -->
+        <section id="contact-section" class="contact-section container box">
+            <h2 class="section-title">Restons en contact</h2>
+            <p style="color: var(--gray-lighter); font-size: 1.2rem">
+                Un projet en tête ? N'hésite pas à me contacter pour en discuter.
+            </p>
+            <div class="contact-methods">
+                <a href="mailto:jessicatchikapa@gmail.com" class="contact-method">
+                    <div class="contact-method-label">Email</div>
+                    <div class="contact-method-value">jessicatchikapa@gmail.com</div>
+                </a>
+                <a href="tel:+15146383094" class="contact-method">
+                    <div class="contact-method-label">Téléphone</div>
+                    <div class="contact-method-value">+1 (514) 638-3094</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Modals -->
+        <div class="modal fade" id="modal1" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
-                    <div class="modal-header border-0">
-                        <h5 class="modal-title fw-bold">Jeu de Survie en Console</h5>
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold">Survie en terre inconnue</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <!-- Carousel pour les screenshots -->
                         <div id="carousel1" class="carousel slide mb-4" data-bs-ride="carousel">
                             <div class="carousel-indicators">
                                 <button
@@ -177,24 +832,24 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <img
-                                        src="assets/imgs/project1-screenshot1.jpg"
+                                        src="assets/imgs/project1-screenshot1.png"
                                         class="d-block w-100"
                                         style="height: 400px; object-fit: cover"
-                                        alt="Menu principal" />
+                                        alt="" />
                                 </div>
                                 <div class="carousel-item">
                                     <img
-                                        src="assets/imgs/project1-screenshot2.jpg"
+                                        src="assets/imgs/project1-screenshot2.png"
                                         class="d-block w-100"
                                         style="height: 400px; object-fit: cover"
-                                        alt="Gameplay" />
+                                        alt="" />
                                 </div>
                                 <div class="carousel-item">
                                     <img
-                                        src="assets/imgs/project1-screenshot3.jpg"
+                                        src="assets/imgs/project1-screenshot3.png"
                                         class="d-block w-100"
                                         style="height: 400px; object-fit: cover"
-                                        alt="Système de combat" />
+                                        alt="" />
                                 </div>
                             </div>
                             <button
@@ -212,35 +867,20 @@
                                 <span class="carousel-control-next-icon"></span>
                             </button>
                         </div>
-
-                        <h6 class="fw-bold mb-3">Description du projet</h6>
-                        <p class="text-muted">
-                            Jeu d'aventure textuel développé en Python utilisant les concepts de programmation orientée
-                            objet. Le joueur explore un territoire inconnu, gère ses ressources (santé, nourriture,
-                            eau), combat des ennemis et prend des décisions qui influencent le déroulement de
-                            l'histoire. Le jeu inclut un système de sauvegarde, plusieurs fins possibles et des quêtes
-                            secondaires.
+                        <h6 class="fw-bold mb-3">Description</h6>
+                        <p>
+                            Jeu de survie développé en C# où le joueur explore un territoire inconnu. Système de
+                            collecte de ressources, construction d'abri et gestion de la survie avant l'hiver.
                         </p>
-
-                        <h6 class="fw-bold mb-3">Fonctionnalités principales</h6>
-                        <ul class="text-muted">
-                            <li>Système de combat tour par tour</li>
-                            <li>Gestion d'inventaire et de ressources</li>
-                            <li>Exploration de différents environnements</li>
-                            <li>Système de quêtes et objectifs</li>
-                            <li>Sauvegarde et chargement de parties</li>
-                            <li>Multiples fins selon les choix du joueur</li>
+                        <h6 class="fw-bold mb-3">Fonctionnalités</h6>
+                        <ul>
+                            <li>Système de sauvegarde JSON</li>
+                            <li>Gestion d'inventaire</li>
+                            <li>Système de crafting</li>
+                            <li>Progression temporelle</li>
                         </ul>
-
-                        <h6 class="fw-bold mb-3">Technologies utilisées</h6>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-dark">Python</span>
-                            <span class="badge bg-dark">POO</span>
-                            <span class="badge bg-dark">Algorithmes</span>
-                            <span class="badge bg-dark">JSON</span>
-                        </div>
                     </div>
-                    <div class="modal-footer border-0">
+                    <div class="modal-footer">
                         <a
                             href="https://github.com/jktchikapa/survival-in-unknown-territory-console-game-project"
                             target="_blank"
@@ -252,11 +892,10 @@
             </div>
         </div>
 
-        <!-- Modal Projet 2 -->
-        <div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+        <div class="modal fade" id="modal2" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
-                    <div class="modal-header border-0">
+                    <div class="modal-header">
                         <h5 class="modal-title fw-bold">Site Web Coco Chanel</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
@@ -274,24 +913,24 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <img
-                                        src="assets/imgs/project2-screenshot1.jpg"
+                                        src="assets/imgs/project2-screenshot1.png"
                                         class="d-block w-100"
                                         style="height: 400px; object-fit: cover"
-                                        alt="Page d'accueil" />
+                                        alt="" />
                                 </div>
                                 <div class="carousel-item">
                                     <img
-                                        src="assets/imgs/project2-screenshot2.jpg"
+                                        src="assets/imgs/project2-screenshot2.png"
                                         class="d-block w-100"
                                         style="height: 400px; object-fit: cover"
-                                        alt="Biographie" />
+                                        alt="" />
                                 </div>
                                 <div class="carousel-item">
                                     <img
-                                        src="assets/imgs/project2-screenshot3.jpg"
+                                        src="assets/imgs/project2-screenshot3.png"
                                         class="d-block w-100"
                                         style="height: 400px; object-fit: cover"
-                                        alt="Galerie" />
+                                        alt="" />
                                 </div>
                             </div>
                             <button
@@ -309,34 +948,13 @@
                                 <span class="carousel-control-next-icon"></span>
                             </button>
                         </div>
-
-                        <h6 class="fw-bold mb-3">Description du projet</h6>
-                        <p class="text-muted">
-                            Site web biographique élégant consacré à Coco Chanel, créé dans le cadre d'un projet
-                            scolaire. Le site présente l'histoire de la créatrice de mode, son influence sur l'industrie
-                            de la mode, et l'héritage de la maison Chanel. Design sophistiqué inspiré par l'esthétique
-                            minimaliste et élégante de la marque.
+                        <h6 class="fw-bold mb-3">Description</h6>
+                        <p>
+                            Site biographique élégant dédié à Coco Chanel avec design responsive et animations CSS
+                            sophistiquées.
                         </p>
-
-                        <h6 class="fw-bold mb-3">Fonctionnalités principales</h6>
-                        <ul class="text-muted">
-                            <li>Navigation fluide et intuitive</li>
-                            <li>Timeline historique interactive</li>
-                            <li>Galerie d'images responsive</li>
-                            <li>Animations CSS élégantes</li>
-                            <li>Design adaptatif pour tous les écrans</li>
-                            <li>Section citations et philosophie</li>
-                        </ul>
-
-                        <h6 class="fw-bold mb-3">Technologies utilisées</h6>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-dark">HTML5</span>
-                            <span class="badge bg-dark">CSS3</span>
-                            <span class="badge bg-dark">JavaScript</span>
-                            <span class="badge bg-dark">Responsive Design</span>
-                        </div>
                     </div>
-                    <div class="modal-footer border-0">
+                    <div class="modal-footer">
                         <a
                             href="https://github.com/jktchikapa/coco-chanel-website-school-project"
                             target="_blank"
@@ -348,12 +966,11 @@
             </div>
         </div>
 
-        <!-- Modal Projet 3 -->
-        <div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+        <div class="modal fade" id="modal3" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
-                    <div class="modal-header border-0">
-                        <h5 class="modal-title fw-bold">Application de Gestion de Tâches</h5>
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold">Portfolio Personnel</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
@@ -364,14 +981,14 @@
                                         src="assets/imgs/project3-screenshot1.jpg"
                                         class="d-block w-100"
                                         style="height: 400px; object-fit: cover"
-                                        alt="Dashboard" />
+                                        alt="" />
                                 </div>
                                 <div class="carousel-item">
                                     <img
                                         src="assets/imgs/project3-screenshot2.jpg"
                                         class="d-block w-100"
                                         style="height: 400px; object-fit: cover"
-                                        alt="Liste de tâches" />
+                                        alt="" />
                                 </div>
                             </div>
                             <button
@@ -389,34 +1006,10 @@
                                 <span class="carousel-control-next-icon"></span>
                             </button>
                         </div>
-
-                        <h6 class="fw-bold mb-3">Description du projet</h6>
-                        <p class="text-muted">
-                            Application web moderne de gestion de tâches développée avec React. Interface intuitive
-                            permettant de créer, organiser et suivre des tâches avec système de priorités et catégories.
-                            Backend Node.js avec base de données MongoDB pour la persistance des données.
-                        </p>
-
-                        <h6 class="fw-bold mb-3">Fonctionnalités principales</h6>
-                        <ul class="text-muted">
-                            <li>Création et édition de tâches</li>
-                            <li>Système de priorités (urgent, important, normal)</li>
-                            <li>Filtrage par catégories et statuts</li>
-                            <li>Interface drag & drop</li>
-                            <li>Notifications et rappels</li>
-                            <li>Statistiques et rapports</li>
-                        </ul>
-
-                        <h6 class="fw-bold mb-3">Technologies utilisées</h6>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-dark">React</span>
-                            <span class="badge bg-dark">Node.js</span>
-                            <span class="badge bg-dark">Express</span>
-                            <span class="badge bg-dark">MongoDB</span>
-                            <span class="badge bg-dark">Bootstrap</span>
-                        </div>
+                        <h6 class="fw-bold mb-3">Description</h6>
+                        <p class="text-muted">Portfolio moderne avec design minimaliste et animations fluides.</p>
                     </div>
-                    <div class="modal-footer border-0">
+                    <div class="modal-footer">
                         <a href="#" target="_blank" class="btn btn-dark">
                             <i class="fab fa-github me-2"></i>Code source
                         </a>
@@ -425,55 +1018,111 @@
             </div>
         </div>
 
-        <!-- Modal Projet 4 -->
-        <div class="modal fade" id="modal4" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header border-0">
-                        <h5 class="modal-title fw-bold">Portfolio Interactif</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img
-                            src="assets/imgs/project4-screenshot1.jpg"
-                            class="w-100 rounded mb-4"
-                            style="height: 400px; object-fit: cover"
-                            alt="Portfolio" />
-
-                        <h6 class="fw-bold mb-3">Description du projet</h6>
-                        <p class="text-muted">
-                            Portfolio personnel moderne avec design minimaliste et animations fluides. Présentation de
-                            mes projets, compétences techniques et moyens de contact. Site entièrement responsive,
-                            optimisé pour les performances et le référencement naturel (SEO).
+        <!-- Footer -->
+        <footer class="footer-complete">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <h5>Jessica Karelle</h5>
+                        <p style="color: #ccc">
+                            Développeuse web passionnée par la création d'expériences numériques élégantes et
+                            fonctionnelles.
                         </p>
-
-                        <h6 class="fw-bold mb-3">Fonctionnalités principales</h6>
-                        <ul class="text-muted">
-                            <li>Design responsive et moderne</li>
-                            <li>Animations au scroll</li>
-                            <li>Galerie de projets interactive</li>
-                            <li>Formulaire de contact fonctionnel</li>
-                            <li>Optimisé SEO</li>
-                            <li>Performance optimale</li>
-                        </ul>
-
-                        <h6 class="fw-bold mb-3">Technologies utilisées</h6>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-dark">HTML5</span>
-                            <span class="badge bg-dark">CSS3</span>
-                            <span class="badge bg-dark">JavaScript</span>
-                            <span class="badge bg-dark">Bootstrap</span>
+                        <div class="mt-3">
+                            <a href="https://github.com/jktchikapa" class="social-icon"
+                                ><i class="fab fa-github"></i
+                            ></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:jessicatchikapa@gmail.com" class="social-icon"
+                                ><i class="fas fa-envelope"></i
+                            ></a>
                         </div>
                     </div>
-                    <div class="modal-footer border-0">
-                        <a href="#" target="_blank" class="btn btn-dark">
-                            <i class="fab fa-github me-2"></i>Code source
-                        </a>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <h5>Navigation</h5>
+                        <ul style="list-style: none; padding: 0">
+                            <li style="margin-bottom: 10px">
+                                <a href="#home-section" style="color: #ccc; text-decoration: none">Accueil</a>
+                            </li>
+                            <li style="margin-bottom: 10px">
+                                <a href="#about-section" style="color: #ccc; text-decoration: none">À propos</a>
+                            </li>
+                            <li style="margin-bottom: 10px">
+                                <a href="#projects-section" style="color: #ccc; text-decoration: none">Projets</a>
+                            </li>
+                            <li style="margin-bottom: 10px">
+                                <a href="#skills-section" style="color: #ccc; text-decoration: none">Compétences</a>
+                            </li>
+                            <li style="margin-bottom: 10px">
+                                <a href="#contact-section" style="color: #ccc; text-decoration: none">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <h5>Contact</h5>
+                        <ul style="list-style: none; padding: 0">
+                            <li style="margin-bottom: 10px">
+                                <a href="mailto:jessicatchikapa@gmail.com" style="color: #ccc; text-decoration: none">
+                                    <i class="fas fa-envelope me-2"></i>jessicatchikapa@gmail.com
+                                </a>
+                            </li>
+                            <li style="margin-bottom: 10px">
+                                <a href="tel:+15146383094" style="color: #ccc; text-decoration: none">
+                                    <i class="fas fa-phone me-2"></i>+1 (514) 638-3094
+                                </a>
+                            </li>
+                            <li>
+                                <span style="color: #ccc">
+                                    <i class="fas fa-map-marker-alt me-2"></i>Saint-Jean-sur-Richelieu, Canada
+                                </span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+                <div class="text-center mt-4">
+                    <p class="mb-0" style="color: #999">&copy; 2025 Jessica Karelle. Tous droits réservés.</p>
+                </div>
             </div>
-        </div>
+        </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute("href"));
+                    if (target) {
+                        target.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                });
+            });
+
+            // Intersection Observer pour les animations
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        }
+                    });
+                },
+                { threshold: 0.1 }
+            );
+
+            document.querySelectorAll(".box").forEach((el) => {
+                observer.observe(el);
+            });
+
+            // Parallax léger sur le hero
+            window.addEventListener("scroll", () => {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector(".hero-section .container");
+                if (hero && scrolled < window.innerHeight) {
+                    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+                    hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+                }
+            });
+        </script>
     </body>
 </html>
