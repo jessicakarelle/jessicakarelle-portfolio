@@ -36,6 +36,9 @@ body {
     overflow-x: hidden;
     line-height: 1.6;
 }
+section{
+    padding: 1rem;
+}
 .bg-grid {
     position: fixed;
     top: 0;
