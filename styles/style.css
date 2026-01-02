@@ -19,6 +19,7 @@ ul:not(.modal ul) {
     list-style: none;
     padding: 0;
 }
+
 footer a {
     display: inline-block;
     color: #ccc;
