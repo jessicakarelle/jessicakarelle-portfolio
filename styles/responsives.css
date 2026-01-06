@@ -36,7 +36,7 @@
 /* Ordinateurs */
 @media (max-width: 1024px) {
     .navbar {
-        width: 90%;
+        width: 100% !important;
     }
     .navbar-hamburger {
         display: block;
