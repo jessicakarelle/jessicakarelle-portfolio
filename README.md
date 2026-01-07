@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/screenshot.png" width="100%" alt="Screenshot of the project">
+  <img src="assets/imgs/website-screenshot.png" width="100%" alt="Screenshot of the project">
 </p>
 
 # Portfolio Website
