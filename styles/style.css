@@ -75,6 +75,7 @@ nav {
     position: relative;
     transition: color 0.3s;
     padding: 0.5rem 1rem !important;
+    text-transform: uppercase;
 }
 .nav-link::before {
     content: "";
@@ -137,6 +138,7 @@ section:not(.hero-section, .projects-section) {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 4rem;
+    margin-top: 4rem;
     letter-spacing: -0.02em;
 }
 .featured-section {

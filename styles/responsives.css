@@ -1,5 +1,8 @@
 /* Tablette */
 @media (max-width: 768px) {
+    .hero-section {
+        min-height: 80vh;
+    }
     .project-card {
         position: relative;
         top: 0;
@@ -20,17 +23,18 @@
         position: relative !important;
         top: 0 !important;
     }
-    h2,
-    h3,
-    h4,
-    h5,
-    ul li,
-    a,
-    div a {
+    .section-title{
         text-align: center;
+        margin: 2rem;
     }
     section {
         padding: 1rem !important;
+    }
+    .invisible-content{
+        display: none;
+    }
+    .featured-title{
+        margin: 1rem;
     }
 }
 /* Ordinateurs */
