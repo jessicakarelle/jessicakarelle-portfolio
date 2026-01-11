@@ -27,7 +27,7 @@ Showcasing web applications, C# projects, and 2D games.
 
 ## Getting Started
 ```bash
-git clone https://github.com/jktchikapa/portfolio-website.git
+git clone https://github.com/jessicakarelle/portfolio-website.git
 cd portfolio-website
 ```
 
@@ -35,7 +35,7 @@ Open `index.html` in your browser.
 
 ## Credits
 
-Developed by [Jessica Karelle](https://github.com/jktchikapa)
+Developed by [Jessica Karelle](https://github.com/jessicakarelle)
 
 ## License
 
