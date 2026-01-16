@@ -29,7 +29,7 @@ Showcasing web site, C# projects.
 ## Getting Started
 
 ```bash
-git clone https://github.com/jessicakarelle/portfolio-website.git
+git clone https://github.com/jessicakarelle/jessicakarelle-portfolio
 cd portfolio-website
 start index.html
 ```
